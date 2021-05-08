@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-12" *ngFor="let apod of apods">
+            <div class="card card-style">
+                <img [src]="apod.url" alt="apod.name" />
+            </div>
+        </div>
+    </div>
+</div>
