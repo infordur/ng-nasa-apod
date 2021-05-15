@@ -1,1 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/fonts.scss';
+
+
+$red: rgb(174, 26, 47);
+$red-gradient: rgba(174, 26, 47, 0.7);
+$black: rgb(33, 37, 41);
+$black-gradient: rgba(33, 37, 41, 0.7);
+$white: #FFF;
+
+
+*, html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Vintages';
+}
+
+
+.bg-app {
+    background: linear-gradient($red-gradient, $black-gradient),
+        url('/assets/img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.app-title {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 2rem 0;
+    color: $white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+
+}
+
+.photo {
+    padding: 2rem;
+    background-color: $white;
+    text-align: center;
+    transition: 0.25s transform ease-in-out;
+    border-radius: 2px;
+    cursor: pointer;
+
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+
+    .photo-img {
+        height: 250px;
+    }
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    .photo-body {
+        margin-top: 1.3rem;
+        letter-spacing: .1rem;
+    }
+
+    .photo-footer {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-family: 'Vintages';
+        color: $black;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .container {
+        width: 70%;
+    }
+
+    .app-title {
+        font-size: 2.1rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2rem;
+    }
+
+    .photo {
+        .photo-img {
+            height: 300px;
+        }
+
+
+    }
+
+}

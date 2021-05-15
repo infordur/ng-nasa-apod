@@ -1,8 +1,22 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-4 col-12" *ngFor="let apod of apods">
-            <div class="card card-style">
-                <img [src]="apod.url" alt="apod.name" />
+    <div class="app-title">
+        <h1>NASA - Astronomy Photo of the Day</h1>
+    </div>
+    <div class="grid">
+        <div
+            class="photo"
+            *ngFor="let apod of apods"
+            [routerLink]="['apod/' + apod.date]"
+            routerLinkActive="router-link-active"
+        >
+            <div class="photo-img">
+                <img [src]="apod.url" [alt]="apod.name" />
+            </div>
+            <div class="photo-body">
+                <h2 class="font-16">{{ apod.title }}</h2>
+            </div>
+            <div class="photo-footer">
+                <span>{{ apod.date | date: "dd-MM-YYYY" }}</span>
             </div>
         </div>
     </div>

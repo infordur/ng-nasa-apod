@@ -33,13 +33,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
             .getApodsFromTo(this.start_date, this.end_date)
             .pipe(takeUntil(this.destroy$))
             .subscribe((response: Apod[]) => {
-                this.apods = response;
+                this.apods = response.reverse();
             });
     }
 
     ngOnDestroy(): void {
         // unsubscribe destroy$ var to prevent memory leaks
         this.destroy$.next(true);
-        this.destroy$.unsubscribe();
+        this.destroy$.complete();
     }
 }
